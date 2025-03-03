@@ -16,7 +16,7 @@ public class RegController {
 
     @GetMapping("/register")
     public String showRegisterPage() {
-        return "register"; // Displays register.html
+        return "register";
     }
 
     @PostMapping("/register")
@@ -25,10 +25,10 @@ public class RegController {
 
         if (isRegistered) {
             model.addAttribute("message", "Registration successful! Please login.");
-            return "login"; // Redirect to login page after successful registration
+            return "login";
         } else {
             model.addAttribute("error", "Username already exists!");
-            return "register"; // Stay on register page if registration fails
+            return "register";
         }
     }
 }

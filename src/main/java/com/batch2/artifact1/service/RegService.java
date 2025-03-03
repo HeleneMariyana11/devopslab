@@ -12,12 +12,11 @@ public class RegService {
     private RegRepo rep;
 
     public boolean registerUser(String username, String password) {
-        // Check if username already exists
+
         if (rep.findByUsername(username) != null) {
             return false;
         }
 
-        // Save new user
         Login newUser = new Login(username, password);
         rep.save(newUser);
         return true;
